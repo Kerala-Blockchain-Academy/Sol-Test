@@ -4,6 +4,9 @@ const { ethers } = require("hardhat");
 describe("Greeter", function () {
   it("Should return the new greeting once it's changed", async function () {
     const Greeter = await ethers.getContractFactory("Greeter");
+    
+    // const greeter = await Greeter.attach("0x313F922BE1649cEc058EC0f076664500c78bdc0b");
+    
     const greeter = await Greeter.deploy("Hello, world!");
     await greeter.deployed();
 
